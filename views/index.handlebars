@@ -1,0 +1,52 @@
+<title>{{title}}</title>
+
+<header>
+  <h1 class="welcome-title flex-container">Mongo DB Scraper!</h1>
+  <h2 class="article">Articles:</h2>
+</header>
+<section class="btn-section">
+
+  <button type="submit" class="scrapeBtn">
+      <span>Scrape for New Articles</span>
+  <a href="/scrape">
+  </a>
+  </button>
+  <a href="/saved" ><button class="savedBtn"><span>Saved Articles</span></button></a>
+
+</section>
+<main class="flex-main">
+  <section class="left-side">
+    <section class="flex-ul">
+      <ul>
+        {{#each articles}}
+        <li>
+          <div class="card" id="articles">
+            <img src="{{image}}" class="image" />
+            <div class="article-container">
+              <h2 class="title">{{title}}</h2>
+              <p class="summary">{{summary}}</p> <a href={{link}} class="siteLink">Check out the Article</a>
+              <div class="notes-container">
+                <a href="#notes">
+                <div class="circle">
+                  <div class="addNotes" data-id="{{_id}}"> Add a Note</div>
+                </div>
+                </a>
+                <div class="circle">
+                  <div class="saveArticle" data-id="{{_id}}">Save Article</div>
+                </div>
+                <div class="circle">
+                  <div class="delete" data-id="{{_id}}">Delete Article</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+  </section>
+
+  <section class="right-side">
+    <div class="notes-div"></div>
+  </section>
+</main>
